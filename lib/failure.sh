@@ -47,14 +47,14 @@ warn_node_engine() {
 }
 
 warn_prebuilt_modules() {
-  local build_dir=${1:-}
+  local build_dir=${1:-}/app
   if [ -e "$build_dir/node_modules" ]; then
     warning "node_modules checked into source control" "https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git"
   fi
 }
 
 warn_missing_package_json() {
-  local build_dir=${1:-}
+  local build_dir=${1:-}/app
   if ! [ -e "$build_dir/package.json" ]; then
     warning "No package.json found"
   fi

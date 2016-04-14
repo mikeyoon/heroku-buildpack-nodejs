@@ -38,7 +38,7 @@ get_cache_directories() {
 }
 
 restore_cache_directories() {
-  local build_dir=${1:-}
+  local build_dir=${1:-}/app
   local cache_dir=${2:-}
 
   for cachepath in ${@:3}; do
@@ -62,7 +62,7 @@ clear_cache() {
 }
 
 save_cache_directories() {
-  local build_dir=${1:-}
+  local build_dir=${1:-}/app
   local cache_dir=${2:-}
 
   for cachepath in ${@:3}; do
